@@ -45,6 +45,7 @@
             this.lblCurrentTurnArrow = new System.Windows.Forms.Label();
             this.lblPlayer2Turn = new System.Windows.Forms.Label();
             this.lblPlayer1Turn = new System.Windows.Forms.Label();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlGameArea.SuspendLayout();
             this.pnlBoard.SuspendLayout();
@@ -73,6 +74,7 @@
             // pnlBoard
             // 
             this.pnlBoard.BackgroundImage = global::SnakesAndLadders.Properties.Resources.background;
+            this.pnlBoard.Controls.Add(this.lblPlayer2);
             this.pnlBoard.Controls.Add(this.lblPlayer1);
             this.pnlBoard.Location = new System.Drawing.Point(12, 8);
             this.pnlBoard.Name = "pnlBoard";
@@ -237,6 +239,19 @@
             this.lblPlayer1Turn.TabIndex = 0;
             this.lblPlayer1Turn.Text = "Player 1";
             // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPlayer2.Font = new System.Drawing.Font("Eurostile LT Std Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPlayer2.ForeColor = System.Drawing.Color.Turquoise;
+            this.lblPlayer2.Location = new System.Drawing.Point(15, 650);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(53, 33);
+            this.lblPlayer2.TabIndex = 2;
+            this.lblPlayer2.Text = "P2";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -278,5 +293,6 @@
         private Label lblPlayer2Turn;
         private Label lblPlayer1Turn;
         private Label lblPlayer1;
+        private Label lblPlayer2;
     }
 }

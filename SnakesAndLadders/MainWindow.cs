@@ -25,6 +25,7 @@ namespace SnakesAndLadders
             positionP1 = 0;
             positionP2 = 0;
             lblPlayer1.Location = new Point(-55, 650);
+            lblPlayer2.Location = new Point(-55, 650);
         }
         private void UpdateLabels()
         {
@@ -225,9 +226,9 @@ namespace SnakesAndLadders
             {
                 RollDice(currentPlayer);
                 positionP2 = positionP2 + rolledNumber;
-                // lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
+                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
                 positionP2 = CheckCurrentPosition(positionP2);
-                // lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
+                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
             }
             EndCurrentTurn(currentPlayer);
         }
