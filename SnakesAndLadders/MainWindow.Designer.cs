@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlGameArea = new System.Windows.Forms.Panel();
             this.pnlBoard = new System.Windows.Forms.Panel();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.lblCurrentTurnArrow = new System.Windows.Forms.Label();
             this.lblPlayer2Turn = new System.Windows.Forms.Label();
             this.lblPlayer1Turn = new System.Windows.Forms.Label();
-            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlGameArea.SuspendLayout();
             this.pnlBoard.SuspendLayout();
@@ -81,6 +81,19 @@
             this.pnlBoard.Size = new System.Drawing.Size(702, 702);
             this.pnlBoard.TabIndex = 1;
             // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPlayer2.Font = new System.Drawing.Font("Eurostile LT Std Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPlayer2.ForeColor = System.Drawing.Color.Turquoise;
+            this.lblPlayer2.Location = new System.Drawing.Point(153, 445);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(53, 33);
+            this.lblPlayer2.TabIndex = 2;
+            this.lblPlayer2.Text = "P2";
+            // 
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
@@ -88,7 +101,7 @@
             this.lblPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayer1.Font = new System.Drawing.Font("Eurostile LT Std Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblPlayer1.Location = new System.Drawing.Point(356, 650);
+            this.lblPlayer1.Location = new System.Drawing.Point(15, 38);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(53, 33);
             this.lblPlayer1.TabIndex = 1;
@@ -238,19 +251,6 @@
             this.lblPlayer1Turn.Size = new System.Drawing.Size(140, 36);
             this.lblPlayer1Turn.TabIndex = 0;
             this.lblPlayer1Turn.Text = "Player 1";
-            // 
-            // lblPlayer2
-            // 
-            this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPlayer2.Font = new System.Drawing.Font("Eurostile LT Std Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayer2.ForeColor = System.Drawing.Color.Turquoise;
-            this.lblPlayer2.Location = new System.Drawing.Point(15, 650);
-            this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(53, 33);
-            this.lblPlayer2.TabIndex = 2;
-            this.lblPlayer2.Text = "P2";
             // 
             // MainWindow
             // 

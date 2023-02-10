@@ -42,11 +42,11 @@ namespace SnakesAndLadders
         }
         private void CheckForWinner()
         {
-            if (positionP1 == 100)
+            if (positionP1 >= 100)
             {
                 MessageBox.Show("Player 1 Wins!", "We Have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (positionP2 == 100)
+            else if (positionP2 >= 100)
             {
                 MessageBox.Show("Player 2 Wins!", "We Have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -126,14 +126,24 @@ namespace SnakesAndLadders
         private Point MovePlayer(int playerNumber, int diceNumber, int currentPosition)
         {
             int size = 0;
-            int currentX = lblPlayer1.Location.X;
-            int currentY = lblPlayer1.Location.Y;
-            for (int i = 0; i < diceNumber; i++)
+            int currentX = 0;
+            int currentY = 0;
+            if (currentPlayer == 1)
             {
-                size = size + 70;
+                currentX = lblPlayer1.Location.X;
+                currentY = lblPlayer1.Location.Y;
             }
-            int newX = currentX + size;
-            playerLabelLocation.X = newX;
+            else if (currentPlayer == 2)
+            {
+                currentX = lblPlayer2.Location.X;
+                currentY = lblPlayer2.Location.Y;
+            }
+            // for (int i = 0; i < diceNumber; i++)
+            // {
+            //     size = size + 70;
+            // }
+            // int newX = currentX + size;
+            // playerLabelLocation.X = newX;
             if (currentPosition == 2)
             {
                 playerLabelLocation = new Point(86, 650);
@@ -165,45 +175,85 @@ namespace SnakesAndLadders
             // if player landed on a space with a snake
             else if (currentPosition == 17)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(425, 650);
             }
             else if (currentPosition == 54)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(425, 450);
             }
             else if (currentPosition == 62)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(83, 585);
             }
             else if (currentPosition == 64)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(16, 310);
             }
             else if (currentPosition == 87)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(223, 515);
             }
             else if (currentPosition == 93)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(493, 175);
             }
             else if (currentPosition == 95)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(356, 175);
             }
             else if (currentPosition == 98)
             {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 playerLabelLocation = new Point(83, 175);
             }
             // if player landed on a space with a ladder
+            else if (currentPosition == 1)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(153, 450);
+            }
+            else if (currentPosition == 4)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(425, 583);
+            }
+            else if (currentPosition == 9)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(630, 455);
+            }
+            else if (currentPosition == 21)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(83, 375);
+            }
+            else if (currentPosition == 28)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(23, 105);
+            }
+            else if (currentPosition == 51)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(425, 240);
+            }
+            else if (currentPosition == 71)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(630, 75);
+            }
+            else if (currentPosition == 80)
+            {
+                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(15, 40);
+            }
             return playerLabelLocation;
         }
         private int RollDice(int playerNumber)
