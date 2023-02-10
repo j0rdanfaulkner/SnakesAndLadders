@@ -6,6 +6,7 @@ namespace SnakesAndLadders
         public int positionP1;
         public int positionP2;
         private int rolledNumber;
+        private Point playerLabelLocation;
         public MainWindow()
         {
             InitializeComponent();
@@ -20,15 +21,23 @@ namespace SnakesAndLadders
         }
         private void ResetGame()
         {
+            UpdateLabels();
             positionP1 = 0;
             positionP2 = 0;
-            lblPlayer1PositionNumber.Text = positionP1.ToString();
-            lblPlayer2PositionNumber.Text = positionP2.ToString();
+            lblPlayer1.Location = new Point(-55, 650);
         }
         private void UpdateLabels()
         {
             lblPlayer1PositionNumber.Text = positionP1.ToString();
             lblPlayer2PositionNumber.Text = positionP2.ToString();
+            if (currentPlayer == 1)
+            {
+                lblCurrentTurnArrow.Text = "<";
+            }
+            else if (currentPlayer == 2)
+            {
+                lblCurrentTurnArrow.Text = ">";
+            }
         }
         private void CheckForWinner()
         {
@@ -64,6 +73,10 @@ namespace SnakesAndLadders
             else if (playerPosition == 87)
             {
                 currentPosition = playerPosition - 63;
+            }
+            else if (playerPosition == 98)
+            {
+                currentPosition = playerPosition - 19;
             }
             // all the spaces that have ladders
             else if (playerPosition == 1)
@@ -109,6 +122,89 @@ namespace SnakesAndLadders
             UpdateLabels();
             CheckForWinner();
         }
+        private Point MovePlayer(int playerNumber, int diceNumber, int currentPosition)
+        {
+            int size = 0;
+            int currentX = lblPlayer1.Location.X;
+            int currentY = lblPlayer1.Location.Y;
+            for (int i = 0; i < diceNumber; i++)
+            {
+                size = size + 70;
+            }
+            int newX = currentX + size;
+            playerLabelLocation.X = newX;
+            if (currentPosition == 2)
+            {
+                playerLabelLocation = new Point(86, 650);
+            }
+            else if (currentPosition == 3)
+            {
+                playerLabelLocation = new Point(156, 650);
+            }
+            else if (currentPosition == 5)
+            {
+                playerLabelLocation = new Point(296, 650);
+            }
+            else if (currentPosition == 6)
+            {
+                playerLabelLocation = new Point(366, 650);
+            }
+            else if (currentPosition == 7)
+            {
+                playerLabelLocation = new Point(436, 650);
+            }
+            else if (currentPosition == 8)
+            {
+                playerLabelLocation = new Point(506, 650);
+            }
+            else if (currentPosition == 10)
+            {
+                playerLabelLocation = new Point(646, 650);
+            }
+            // if player landed on a space with a snake
+            else if (currentPosition == 17)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(425, 650);
+            }
+            else if (currentPosition == 54)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(425, 450);
+            }
+            else if (currentPosition == 62)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(83, 585);
+            }
+            else if (currentPosition == 64)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(16, 310);
+            }
+            else if (currentPosition == 87)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(223, 515);
+            }
+            else if (currentPosition == 93)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(493, 175);
+            }
+            else if (currentPosition == 95)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(356, 175);
+            }
+            else if (currentPosition == 98)
+            {
+                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Landed On a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                playerLabelLocation = new Point(83, 175);
+            }
+            // if player landed on a space with a ladder
+            return playerLabelLocation;
+        }
         private int RollDice(int playerNumber)
         {
             Random roll = new Random();
@@ -122,12 +218,16 @@ namespace SnakesAndLadders
             {
                 RollDice(currentPlayer);
                 positionP1 = positionP1 + rolledNumber;
+                lblPlayer1.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
                 positionP1 = CheckCurrentPosition(positionP1);
             }
             else if (currentPlayer == 2) 
             {
                 RollDice(currentPlayer);
                 positionP2 = positionP2 + rolledNumber;
+                // lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
+                positionP2 = CheckCurrentPosition(positionP2);
+                // lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
             }
             EndCurrentTurn(currentPlayer);
         }
