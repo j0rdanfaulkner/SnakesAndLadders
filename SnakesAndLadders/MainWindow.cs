@@ -226,9 +226,9 @@ namespace SnakesAndLadders
             {
                 RollDice(currentPlayer);
                 positionP2 = positionP2 + rolledNumber;
-                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
+                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP2);
                 positionP2 = CheckCurrentPosition(positionP2);
-                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
+                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP2);
             }
             EndCurrentTurn(currentPlayer);
         }
