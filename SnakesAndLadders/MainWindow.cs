@@ -23,24 +23,24 @@ namespace SnakesAndLadders
             positionP1 = 0;
             positionP2 = 0;
         }
-        private void EndCurrentTurn(int currentPlayer)
+        private void EndCurrentTurn(int playerNumber)
         {
-            if (currentPlayer == 1)
+            if (playerNumber == 1)
             {
                 currentPlayer = 2;
                 // update labels
             }
-            else if (currentPlayer == 2)
+            else if (playerNumber == 2)
             {
                 currentPlayer = 1;
                 // update labels
             }
         }
-        private int RollDice(int currentPlayer)
+        private int RollDice(int playerNumber)
         {
             Random roll = new Random();
             rolledNumber = roll.Next(1, 7);
-            MessageBox.Show("Player " + currentPlayer + " rolled a " + rolledNumber + "!", "Dice Rolled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Player " + playerNumber + " rolled a " + rolledNumber + "!", "Dice Rolled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return rolledNumber;
         }
         private void btnRollDice_Click(object sender, EventArgs e)
