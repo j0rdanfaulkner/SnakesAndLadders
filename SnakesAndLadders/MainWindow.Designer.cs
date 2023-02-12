@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlGameArea = new System.Windows.Forms.Panel();
             this.pnlBoard = new System.Windows.Forms.Panel();
@@ -35,6 +36,7 @@
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.lblPlayer2PositionNumber = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblPlayer1PositionNumber = new System.Windows.Forms.Label();
@@ -117,6 +119,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnReset);
             this.panel3.Controls.Add(this.lblPlayer2PositionNumber);
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Controls.Add(this.lblPlayer1PositionNumber);
@@ -132,6 +135,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(507, 674);
             this.panel3.TabIndex = 2;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnReset.FlatAppearance.BorderSize = 3;
+            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.ForeColor = System.Drawing.Color.Black;
+            this.btnReset.Location = new System.Drawing.Point(161, 581);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(192, 84);
+            this.btnReset.TabIndex = 9;
+            this.btnReset.Text = "Restart";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lblPlayer2PositionNumber
             // 
@@ -156,6 +176,7 @@
             this.btnExit.Size = new System.Drawing.Size(96, 96);
             this.btnExit.TabIndex = 1;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblPlayer1PositionNumber
             // 
@@ -260,6 +281,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Eurostile LT Std Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
             this.Text = "Snakes and Ladders";
@@ -294,5 +316,6 @@
         private Label lblPlayer1Turn;
         private Label lblPlayer1;
         private Label lblPlayer2;
+        private Button btnReset;
     }
 }

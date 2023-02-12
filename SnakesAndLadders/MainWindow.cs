@@ -493,5 +493,32 @@ namespace SnakesAndLadders
             }
             EndCurrentTurn(currentPlayer);
         }
+        /// <summary>
+        /// ends the program when the exit button is clicked and the user confirms their action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to end the game?", "End Game", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
+        }
+        /// <summary>
+        /// restarts the current game when the reset button is clicked and the user confirms their action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to restart the current game?", "Game In Process", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                StartGame();
+            }
+        }
     }
 }
