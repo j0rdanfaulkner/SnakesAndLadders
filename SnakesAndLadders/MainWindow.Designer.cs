@@ -36,6 +36,9 @@
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pbxP2EventSpace = new System.Windows.Forms.PictureBox();
+            this.pbxP1EventSpace = new System.Windows.Forms.PictureBox();
+            this.pbxCurrentTurnArrow = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblPlayer2PositionNumber = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -45,7 +48,6 @@
             this.lblPlayer1Positions = new System.Windows.Forms.Label();
             this.lblCurrentPositions = new System.Windows.Forms.Label();
             this.lblCurrentTurn = new System.Windows.Forms.Label();
-            this.lblCurrentTurnArrow = new System.Windows.Forms.Label();
             this.lblPlayer2Turn = new System.Windows.Forms.Label();
             this.lblPlayer1Turn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -53,6 +55,9 @@
             this.pnlBoard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxP2EventSpace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxP1EventSpace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentTurnArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,6 +73,7 @@
             this.pnlGameArea.BackColor = System.Drawing.Color.Transparent;
             this.pnlGameArea.Controls.Add(this.pnlBoard);
             this.pnlGameArea.Controls.Add(this.panel2);
+            this.pnlGameArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGameArea.Location = new System.Drawing.Point(0, 0);
             this.pnlGameArea.Name = "pnlGameArea";
             this.pnlGameArea.Size = new System.Drawing.Size(1280, 720);
@@ -75,6 +81,7 @@
             // 
             // pnlBoard
             // 
+            this.pnlBoard.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlBoard.BackgroundImage = global::SnakesAndLadders.Properties.Resources.background;
             this.pnlBoard.Controls.Add(this.lblPlayer2);
             this.pnlBoard.Controls.Add(this.lblPlayer1);
@@ -111,6 +118,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(723, 8);
             this.panel2.Name = "panel2";
@@ -119,6 +127,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pbxP2EventSpace);
+            this.panel3.Controls.Add(this.pbxP1EventSpace);
+            this.panel3.Controls.Add(this.pbxCurrentTurnArrow);
             this.panel3.Controls.Add(this.btnReset);
             this.panel3.Controls.Add(this.lblPlayer2PositionNumber);
             this.panel3.Controls.Add(this.btnExit);
@@ -128,17 +139,45 @@
             this.panel3.Controls.Add(this.lblPlayer1Positions);
             this.panel3.Controls.Add(this.lblCurrentPositions);
             this.panel3.Controls.Add(this.lblCurrentTurn);
-            this.panel3.Controls.Add(this.lblCurrentTurnArrow);
             this.panel3.Controls.Add(this.lblPlayer2Turn);
             this.panel3.Controls.Add(this.lblPlayer1Turn);
             this.panel3.Location = new System.Drawing.Point(21, 9);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(507, 674);
+            this.panel3.Size = new System.Drawing.Size(508, 674);
             this.panel3.TabIndex = 2;
+            // 
+            // pbxP2EventSpace
+            // 
+            this.pbxP2EventSpace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxP2EventSpace.Location = new System.Drawing.Point(449, 249);
+            this.pbxP2EventSpace.Name = "pbxP2EventSpace";
+            this.pbxP2EventSpace.Size = new System.Drawing.Size(32, 32);
+            this.pbxP2EventSpace.TabIndex = 12;
+            this.pbxP2EventSpace.TabStop = false;
+            // 
+            // pbxP1EventSpace
+            // 
+            this.pbxP1EventSpace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxP1EventSpace.Location = new System.Drawing.Point(137, 249);
+            this.pbxP1EventSpace.Name = "pbxP1EventSpace";
+            this.pbxP1EventSpace.Size = new System.Drawing.Size(32, 32);
+            this.pbxP1EventSpace.TabIndex = 11;
+            this.pbxP1EventSpace.TabStop = false;
+            // 
+            // pbxCurrentTurnArrow
+            // 
+            this.pbxCurrentTurnArrow.BackgroundImage = global::SnakesAndLadders.Properties.Resources.leftarrow;
+            this.pbxCurrentTurnArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCurrentTurnArrow.Location = new System.Drawing.Point(233, 89);
+            this.pbxCurrentTurnArrow.Name = "pbxCurrentTurnArrow";
+            this.pbxCurrentTurnArrow.Size = new System.Drawing.Size(48, 48);
+            this.pbxCurrentTurnArrow.TabIndex = 10;
+            this.pbxCurrentTurnArrow.TabStop = false;
             // 
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnReset.FlatAppearance.BorderSize = 3;
             this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
@@ -243,16 +282,6 @@
             this.lblCurrentTurn.TabIndex = 3;
             this.lblCurrentTurn.Text = "Current Turn:";
             // 
-            // lblCurrentTurnArrow
-            // 
-            this.lblCurrentTurnArrow.AutoSize = true;
-            this.lblCurrentTurnArrow.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCurrentTurnArrow.Location = new System.Drawing.Point(239, 97);
-            this.lblCurrentTurnArrow.Name = "lblCurrentTurnArrow";
-            this.lblCurrentTurnArrow.Size = new System.Drawing.Size(32, 36);
-            this.lblCurrentTurnArrow.TabIndex = 2;
-            this.lblCurrentTurnArrow.Text = "<";
-            // 
             // lblPlayer2Turn
             // 
             this.lblPlayer2Turn.AutoSize = true;
@@ -292,6 +321,9 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxP2EventSpace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxP1EventSpace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCurrentTurnArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,11 +343,13 @@
         private Label lblPlayer1Positions;
         private Label lblCurrentPositions;
         private Label lblCurrentTurn;
-        private Label lblCurrentTurnArrow;
         private Label lblPlayer2Turn;
         private Label lblPlayer1Turn;
         private Label lblPlayer1;
         private Label lblPlayer2;
         private Button btnReset;
+        private PictureBox pbxCurrentTurnArrow;
+        private PictureBox pbxP2EventSpace;
+        private PictureBox pbxP1EventSpace;
     }
 }
