@@ -144,115 +144,249 @@ namespace SnakesAndLadders
             // }
             // int newX = currentX + size;
             // playerLabelLocation.X = newX;
-            if (currentPosition == 2)
+            switch (currentPosition)
             {
-                playerLabelLocation = new Point(86, 650);
-            }
-            else if (currentPosition == 3)
-            {
-                playerLabelLocation = new Point(156, 650);
-            }
-            else if (currentPosition == 5)
-            {
-                playerLabelLocation = new Point(296, 650);
-            }
-            else if (currentPosition == 6)
-            {
-                playerLabelLocation = new Point(366, 650);
-            }
-            else if (currentPosition == 7)
-            {
-                playerLabelLocation = new Point(436, 650);
-            }
-            else if (currentPosition == 8)
-            {
-                playerLabelLocation = new Point(506, 650);
-            }
-            else if (currentPosition == 10)
-            {
-                playerLabelLocation = new Point(646, 650);
-            }
-            // if player landed on a space with a snake
-            else if (currentPosition == 17)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(425, 650);
-            }
-            else if (currentPosition == 54)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(425, 450);
-            }
-            else if (currentPosition == 62)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(83, 585);
-            }
-            else if (currentPosition == 64)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(16, 310);
-            }
-            else if (currentPosition == 87)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(223, 515);
-            }
-            else if (currentPosition == 93)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(493, 175);
-            }
-            else if (currentPosition == 95)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(356, 175);
-            }
-            else if (currentPosition == 98)
-            {
-                MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(83, 175);
-            }
-            // if player landed on a space with a ladder
-            else if (currentPosition == 1)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(153, 450);
-            }
-            else if (currentPosition == 4)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(425, 583);
-            }
-            else if (currentPosition == 9)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(630, 455);
-            }
-            else if (currentPosition == 21)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(83, 375);
-            }
-            else if (currentPosition == 28)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(23, 105);
-            }
-            else if (currentPosition == 51)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(425, 240);
-            }
-            else if (currentPosition == 71)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(630, 75);
-            }
-            else if (currentPosition == 80)
-            {
-                MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                playerLabelLocation = new Point(15, 40);
+                case 1: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(153, 450);
+                    break;
+                case 2:
+                    playerLabelLocation = new Point(86, 650);
+                    break;
+                case 3:
+                    playerLabelLocation = new Point(156, 650);
+                    break;
+                case 4: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(425, 583);
+                    break;
+                case 5:
+                    playerLabelLocation = new Point(296, 650);
+                    break;
+                case 6:
+                    playerLabelLocation = new Point(366, 650);
+                    break;
+                case 7:
+                    playerLabelLocation = new Point(436, 650);
+                    break;
+                case 8:
+                    playerLabelLocation = new Point(506, 650);
+                    break;
+                case 9: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(630, 455);
+                    break;
+                case 10:
+                    playerLabelLocation = new Point(646, 650);
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+                case 15:
+                    break;
+                case 16:
+                    break;
+                case 17: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(425, 650);
+                    break;
+                case 18:
+                    break;
+                case 19:
+                    break;
+                case 20:
+                    break;
+                case 21: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(83, 375);
+                    break;
+                case 22:
+                    break;
+                case 23:
+                    break;
+                case 24:
+                    break;
+                case 25:
+                    break;
+                case 26:
+                    break;
+                case 27:
+                    break;
+                case 28: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(23, 105);
+                    break;
+                case 29:
+                    break;
+                case 30:
+                    break;
+                case 31:
+                    break;
+                case 32:
+                    break;
+                case 33:
+                    break;
+                case 34:
+                    break;
+                case 35:
+                    break;
+                case 36:
+                    break;
+                case 37:
+                    break;
+                case 38:
+                    break;
+                case 39:
+                    break;
+                case 40:
+                    break;
+                case 41:
+                    break;
+                case 42:
+                    break;
+                case 43:
+                    break;
+                case 44:
+                    break;
+                case 45:
+                    break;
+                case 46:
+                    break;
+                case 47:
+                    break;
+                case 48:
+                    break;
+                case 49:
+                    break;
+                case 50:
+                    break;
+                case 51: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(425, 240);
+                    break;
+                case 52:
+                    break;
+                case 53:
+                    break;
+                case 54: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(425, 450);
+                    break;
+                case 55:
+                    break;
+                case 56:
+                    break;
+                case 57:
+                    break;
+                case 58:
+                    break;
+                case 59:
+                    break;
+                case 60:
+                    break;
+                case 61:
+                    break;
+                case 62: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(83, 585);
+                    break;
+                case 63:
+                    break;
+                case 64: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(16, 310);
+                    break;
+                case 65:
+                    break;
+                case 66:
+                    break;
+                case 67:
+                    break;
+                case 68:
+                    break;
+                case 69:
+                    break;
+                case 70:
+                    break;
+                case 71: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(630, 75);
+                    break;
+                case 72:
+                    break;
+                case 73:
+                    break;
+                case 74:
+                    break;
+                case 75:
+                    break;
+                case 76:
+                    break;
+                case 77:
+                    break;
+                case 78:
+                    break;
+                case 79:
+                    break;
+                case 80: // space with ladder
+                    MessageBox.Show("Player " + playerNumber + " went up a ladder!", "Climbed Up a Ladder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(15, 40);
+                    break;
+                case 81:
+                    break;
+                case 82:
+                    break;
+                case 83:
+                    break;
+                case 84:
+                    break;
+                case 85:
+                    break;
+                case 86:
+                    break;
+                case 87: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(223, 515);
+                    break;
+                case 88:
+                    break;
+                case 89:
+                    break;
+                case 90:
+                    break;
+                case 91:
+                    break;
+                case 92:
+                    break;
+                case 93: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(493, 175);
+                    break;
+                case 94:
+                    break;
+                case 95: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(356, 175);
+                    break;
+                case 96:
+                    break;
+                case 97:
+                    break;
+                case 98: // space with snake
+                    MessageBox.Show("Player " + playerNumber + " landed on a snake!", "Slid Down a Snake", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    playerLabelLocation = new Point(83, 175);
+                    break;
+                case 99:
+                    break;
+                case 100:
+                    break;
+                default:
+                    break;
             }
             return playerLabelLocation;
         }
