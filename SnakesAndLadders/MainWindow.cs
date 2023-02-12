@@ -53,12 +53,13 @@ namespace SnakesAndLadders
             if (positionP1 >= 100)
             {
                 MessageBox.Show("Player 1 Wins!", "We Have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RestartGame();
             }
             else if (positionP2 >= 100)
             {
                 MessageBox.Show("Player 2 Wins!", "We Have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RestartGame();
             }
-            RestartGame();
         }
         private int CheckCurrentPosition(int playerPosition)
         {

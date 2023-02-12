@@ -312,6 +312,8 @@
             this.Font = new System.Drawing.Font("Eurostile LT Std Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1296, 759);
+            this.MinimumSize = new System.Drawing.Size(1296, 759);
             this.Name = "MainWindow";
             this.Text = "Snakes and Ladders";
             this.panel1.ResumeLayout(false);
