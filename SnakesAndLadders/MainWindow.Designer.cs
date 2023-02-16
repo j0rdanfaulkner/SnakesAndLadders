@@ -101,7 +101,7 @@
             this.lblPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayer2.Font = new System.Drawing.Font("Eurostile LT Std Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer2.ForeColor = System.Drawing.Color.Turquoise;
-            this.lblPlayer2.Location = new System.Drawing.Point(153, 445);
+            this.lblPlayer2.Location = new System.Drawing.Point(17, 379);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(53, 33);
             this.lblPlayer2.TabIndex = 2;
@@ -114,7 +114,7 @@
             this.lblPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPlayer1.Font = new System.Drawing.Font("Eurostile LT Std Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer1.ForeColor = System.Drawing.Color.BlueViolet;
-            this.lblPlayer1.Location = new System.Drawing.Point(292, 40);
+            this.lblPlayer1.Location = new System.Drawing.Point(493, 173);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(53, 33);
             this.lblPlayer1.TabIndex = 1;
