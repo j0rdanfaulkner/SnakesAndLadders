@@ -9,12 +9,14 @@ namespace SnakesAndLadders
 {
     class Player
     {
-        public int playerID;
-        public int playerPosition;
+        public int id;
+        public int position;
+        public Point positionOnBoard;
         public Player(int playerNumber)
         {
-            playerID = playerNumber;
-            playerPosition = 0;
+            id = playerNumber;
+            position = 0;
+            positionOnBoard = new Point(-55, 650);
         }
     }
 }
