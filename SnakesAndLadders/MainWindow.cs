@@ -7,6 +7,8 @@ namespace SnakesAndLadders
         public int positionP2;
         private int rolledNumber;
         private Point playerLabelLocation;
+        Player player1;
+        Player player2;
         public MainWindow()
         {
             InitializeComponent();
@@ -14,16 +16,25 @@ namespace SnakesAndLadders
         }
         private void StartGame()
         {
+            player1 = new Player(1);
+            player2 = new Player(2);
             Random startingPlayer = new Random();
             currentPlayer = startingPlayer.Next(1, 3);
-            MessageBox.Show("Player " + currentPlayer + " shall go first!", "Starting Player", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (currentPlayer == player1.playerID)
+            {
+                MessageBox.Show("Player 1 shall go first!", "Starting Player", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (currentPlayer == player2.playerID)
+            {
+                MessageBox.Show("Player 2 shall go first!", "Starting Player", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             ResetGame();
         }
         private void ResetGame()
         {
             UpdateLabels();
-            positionP1 = 0;
-            positionP2 = 0;
+            player1.playerPosition = 0;
+            player2.playerPosition = 0;
             lblPlayer1.Location = new Point(-55, 650);
             lblPlayer2.Location = new Point(-55, 650);
         }
@@ -135,7 +146,7 @@ namespace SnakesAndLadders
         }
         private Point MovePlayer(int playerNumber, int diceNumber, int currentPosition)
         {
-            int size = 0;
+            // int size = 0;
             int currentX = 0;
             int currentY = 0;
             if (currentPlayer == 1)
