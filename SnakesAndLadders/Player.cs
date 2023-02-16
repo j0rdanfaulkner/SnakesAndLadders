@@ -11,10 +11,10 @@ namespace SnakesAndLadders
     {
         public int playerID;
         public int playerPosition;
-        public Player(int playerID)
+        public Player(int playerNumber)
         {
-            Player player = new Player(playerID);
-            player.playerPosition = 0;
+            playerID = playerNumber;
+            playerPosition = 0;
         }
     }
 }

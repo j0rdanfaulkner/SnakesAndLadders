@@ -3,8 +3,6 @@ namespace SnakesAndLadders
     public partial class MainWindow : Form
     {
         public int currentPlayer;
-        public int positionP1;
-        public int positionP2;
         private int rolledNumber;
         private Point playerLabelLocation;
         Player player1;
@@ -40,13 +38,13 @@ namespace SnakesAndLadders
         }
         private void UpdateLabels()
         {
-            lblPlayer1PositionNumber.Text = positionP1.ToString();
-            lblPlayer2PositionNumber.Text = positionP2.ToString();
-            if (currentPlayer == 1)
+            lblPlayer1PositionNumber.Text = player1.playerPosition.ToString();
+            lblPlayer2PositionNumber.Text = player2.playerPosition.ToString();
+            if (currentPlayer == player1.playerID)
             {
                 pbxCurrentTurnArrow.BackgroundImage = Properties.Resources.rightarrow;
             }
-            else if (currentPlayer == 2)
+            else if (currentPlayer == player2.playerID)
             {
                 pbxCurrentTurnArrow.BackgroundImage = Properties.Resources.leftarrow;
             }
@@ -61,12 +59,12 @@ namespace SnakesAndLadders
         }
         private void CheckForWinner()
         {
-            if (positionP1 >= 100)
+            if (player1.playerPosition >= 100)
             {
                 MessageBox.Show("Player 1 Wins!", "We Have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RestartGame();
             }
-            else if (positionP2 >= 100)
+            else if (player2.playerPosition >= 100)
             {
                 MessageBox.Show("Player 2 Wins!", "We Have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RestartGame();
@@ -133,13 +131,13 @@ namespace SnakesAndLadders
         }
         private void EndCurrentTurn(int playerNumber)
         {
-            if (playerNumber == 1)
+            if (playerNumber == player1.playerID)
             {
-                currentPlayer = 2;
+                currentPlayer = player2.playerID;
             }
-            else if (playerNumber == 2)
+            else if (playerNumber == player2.playerID)
             {
-                currentPlayer = 1;
+                currentPlayer = player1.playerID;
             }
             UpdateLabels();
             CheckForWinner();
@@ -149,12 +147,12 @@ namespace SnakesAndLadders
             // int size = 0;
             int currentX = 0;
             int currentY = 0;
-            if (currentPlayer == 1)
+            if (currentPlayer == player1.playerID)
             {
                 currentX = lblPlayer1.Location.X;
                 currentY = lblPlayer1.Location.Y;
             }
-            else if (currentPlayer == 2)
+            else if (currentPlayer == player2.playerID)
             {
                 currentX = lblPlayer2.Location.X;
                 currentY = lblPlayer2.Location.Y;
@@ -633,20 +631,20 @@ namespace SnakesAndLadders
         }
         private void btnRollDice_Click(object sender, EventArgs e)
         {
-            if (currentPlayer == 1)
+            if (currentPlayer == player1.playerID)
             {
                 RollDice(currentPlayer);
-                positionP1 = positionP1 + rolledNumber;
-                lblPlayer1.Location = MovePlayer(currentPlayer, rolledNumber, positionP1);
-                positionP1 = CheckCurrentPosition(positionP1);
+                player1.playerPosition = player1.playerPosition + rolledNumber;
+                lblPlayer1.Location = MovePlayer(currentPlayer, rolledNumber, player1.playerPosition);
+                player1.playerPosition = CheckCurrentPosition(player1.playerPosition);
             }
-            else if (currentPlayer == 2) 
+            else if (currentPlayer == player2.playerID) 
             {
                 RollDice(currentPlayer);
-                positionP2 = positionP2 + rolledNumber;
-                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP2);
-                positionP2 = CheckCurrentPosition(positionP2);
-                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, positionP2);
+                player2.playerPosition = player2.playerPosition + rolledNumber;
+                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, player2.playerPosition);
+                player2.playerPosition = CheckCurrentPosition(player2.playerPosition);
+                lblPlayer2.Location = MovePlayer(currentPlayer, rolledNumber, player2.playerPosition);
             }
             EndCurrentTurn(currentPlayer);
         }
