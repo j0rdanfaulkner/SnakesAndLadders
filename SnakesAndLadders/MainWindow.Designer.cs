@@ -36,10 +36,14 @@
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblP2Name = new System.Windows.Forms.Label();
+            this.lblP1Name = new System.Windows.Forms.Label();
+            this.tbxP2Name = new System.Windows.Forms.TextBox();
+            this.tbxP1Name = new System.Windows.Forms.TextBox();
             this.pbxP2EventSpace = new System.Windows.Forms.PictureBox();
             this.pbxP1EventSpace = new System.Windows.Forms.PictureBox();
             this.pbxCurrentTurnArrow = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnStartGame = new System.Windows.Forms.Button();
             this.lblPlayer2PositionNumber = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblPlayer1PositionNumber = new System.Windows.Forms.Label();
@@ -127,10 +131,14 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblP2Name);
+            this.panel3.Controls.Add(this.lblP1Name);
+            this.panel3.Controls.Add(this.tbxP2Name);
+            this.panel3.Controls.Add(this.tbxP1Name);
             this.panel3.Controls.Add(this.pbxP2EventSpace);
             this.panel3.Controls.Add(this.pbxP1EventSpace);
             this.panel3.Controls.Add(this.pbxCurrentTurnArrow);
-            this.panel3.Controls.Add(this.btnReset);
+            this.panel3.Controls.Add(this.btnStartGame);
             this.panel3.Controls.Add(this.lblPlayer2PositionNumber);
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Controls.Add(this.lblPlayer1PositionNumber);
@@ -146,10 +154,46 @@
             this.panel3.Size = new System.Drawing.Size(508, 674);
             this.panel3.TabIndex = 2;
             // 
+            // lblP2Name
+            // 
+            this.lblP2Name.AutoSize = true;
+            this.lblP2Name.Font = new System.Drawing.Font("Eurostile LT Std Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblP2Name.Location = new System.Drawing.Point(29, 408);
+            this.lblP2Name.Name = "lblP2Name";
+            this.lblP2Name.Size = new System.Drawing.Size(226, 30);
+            this.lblP2Name.TabIndex = 19;
+            this.lblP2Name.Text = "Player 2\'s Name:";
+            // 
+            // lblP1Name
+            // 
+            this.lblP1Name.AutoSize = true;
+            this.lblP1Name.Font = new System.Drawing.Font("Eurostile LT Std Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblP1Name.Location = new System.Drawing.Point(29, 340);
+            this.lblP1Name.Name = "lblP1Name";
+            this.lblP1Name.Size = new System.Drawing.Size(226, 30);
+            this.lblP1Name.TabIndex = 15;
+            this.lblP1Name.Text = "Player 1\'s Name:";
+            // 
+            // tbxP2Name
+            // 
+            this.tbxP2Name.Font = new System.Drawing.Font("Eurostile LT Std Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tbxP2Name.Location = new System.Drawing.Point(261, 400);
+            this.tbxP2Name.Name = "tbxP2Name";
+            this.tbxP2Name.Size = new System.Drawing.Size(177, 37);
+            this.tbxP2Name.TabIndex = 14;
+            // 
+            // tbxP1Name
+            // 
+            this.tbxP1Name.Font = new System.Drawing.Font("Eurostile LT Std Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tbxP1Name.Location = new System.Drawing.Point(261, 332);
+            this.tbxP1Name.Name = "tbxP1Name";
+            this.tbxP1Name.Size = new System.Drawing.Size(177, 37);
+            this.tbxP1Name.TabIndex = 13;
+            // 
             // pbxP2EventSpace
             // 
             this.pbxP2EventSpace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxP2EventSpace.Location = new System.Drawing.Point(449, 249);
+            this.pbxP2EventSpace.Location = new System.Drawing.Point(459, 249);
             this.pbxP2EventSpace.Name = "pbxP2EventSpace";
             this.pbxP2EventSpace.Size = new System.Drawing.Size(32, 32);
             this.pbxP2EventSpace.TabIndex = 12;
@@ -158,7 +202,7 @@
             // pbxP1EventSpace
             // 
             this.pbxP1EventSpace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxP1EventSpace.Location = new System.Drawing.Point(137, 249);
+            this.pbxP1EventSpace.Location = new System.Drawing.Point(147, 249);
             this.pbxP1EventSpace.Name = "pbxP1EventSpace";
             this.pbxP1EventSpace.Size = new System.Drawing.Size(32, 32);
             this.pbxP1EventSpace.TabIndex = 11;
@@ -174,33 +218,35 @@
             this.pbxCurrentTurnArrow.TabIndex = 10;
             this.pbxCurrentTurnArrow.TabStop = false;
             // 
-            // btnReset
+            // btnStartGame
             // 
-            this.btnReset.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnReset.FlatAppearance.BorderSize = 3;
-            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.ForeColor = System.Drawing.Color.Black;
-            this.btnReset.Location = new System.Drawing.Point(161, 581);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(192, 84);
-            this.btnReset.TabIndex = 9;
-            this.btnReset.Text = "Restart";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnStartGame.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnStartGame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStartGame.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStartGame.FlatAppearance.BorderSize = 3;
+            this.btnStartGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnStartGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartGame.ForeColor = System.Drawing.Color.Black;
+            this.btnStartGame.Location = new System.Drawing.Point(161, 581);
+            this.btnStartGame.Name = "btnStartGame";
+            this.btnStartGame.Size = new System.Drawing.Size(192, 84);
+            this.btnStartGame.TabIndex = 9;
+            this.btnStartGame.Text = "START GAME";
+            this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // lblPlayer2PositionNumber
             // 
             this.lblPlayer2PositionNumber.AutoSize = true;
             this.lblPlayer2PositionNumber.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayer2PositionNumber.Location = new System.Drawing.Point(381, 249);
+            this.lblPlayer2PositionNumber.Location = new System.Drawing.Point(341, 245);
+            this.lblPlayer2PositionNumber.MinimumSize = new System.Drawing.Size(150, 36);
             this.lblPlayer2PositionNumber.Name = "lblPlayer2PositionNumber";
-            this.lblPlayer2PositionNumber.Size = new System.Drawing.Size(57, 36);
+            this.lblPlayer2PositionNumber.Size = new System.Drawing.Size(150, 36);
             this.lblPlayer2PositionNumber.TabIndex = 8;
-            this.lblPlayer2PositionNumber.Text = "XX";
+            this.lblPlayer2PositionNumber.Text = "0";
+            this.lblPlayer2PositionNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExit
             // 
@@ -221,11 +267,13 @@
             // 
             this.lblPlayer1PositionNumber.AutoSize = true;
             this.lblPlayer1PositionNumber.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayer1PositionNumber.Location = new System.Drawing.Point(63, 249);
+            this.lblPlayer1PositionNumber.Location = new System.Drawing.Point(29, 245);
+            this.lblPlayer1PositionNumber.MinimumSize = new System.Drawing.Size(150, 36);
             this.lblPlayer1PositionNumber.Name = "lblPlayer1PositionNumber";
-            this.lblPlayer1PositionNumber.Size = new System.Drawing.Size(57, 36);
+            this.lblPlayer1PositionNumber.Size = new System.Drawing.Size(150, 36);
             this.lblPlayer1PositionNumber.TabIndex = 7;
-            this.lblPlayer1PositionNumber.Text = "XX";
+            this.lblPlayer1PositionNumber.Text = "0";
+            this.lblPlayer1PositionNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRollDice
             // 
@@ -247,20 +295,24 @@
             this.lblPlayer2Positions.AutoSize = true;
             this.lblPlayer2Positions.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer2Positions.Location = new System.Drawing.Point(341, 202);
+            this.lblPlayer2Positions.MinimumSize = new System.Drawing.Size(150, 36);
             this.lblPlayer2Positions.Name = "lblPlayer2Positions";
-            this.lblPlayer2Positions.Size = new System.Drawing.Size(140, 36);
+            this.lblPlayer2Positions.Size = new System.Drawing.Size(150, 36);
             this.lblPlayer2Positions.TabIndex = 6;
             this.lblPlayer2Positions.Text = "Player 2";
+            this.lblPlayer2Positions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlayer1Positions
             // 
             this.lblPlayer1Positions.AutoSize = true;
             this.lblPlayer1Positions.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer1Positions.Location = new System.Drawing.Point(29, 202);
+            this.lblPlayer1Positions.MinimumSize = new System.Drawing.Size(150, 36);
             this.lblPlayer1Positions.Name = "lblPlayer1Positions";
-            this.lblPlayer1Positions.Size = new System.Drawing.Size(140, 36);
+            this.lblPlayer1Positions.Size = new System.Drawing.Size(150, 36);
             this.lblPlayer1Positions.TabIndex = 5;
             this.lblPlayer1Positions.Text = "Player 1";
+            this.lblPlayer1Positions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCurrentPositions
             // 
@@ -287,20 +339,24 @@
             this.lblPlayer2Turn.AutoSize = true;
             this.lblPlayer2Turn.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer2Turn.Location = new System.Drawing.Point(341, 97);
+            this.lblPlayer2Turn.MinimumSize = new System.Drawing.Size(150, 36);
             this.lblPlayer2Turn.Name = "lblPlayer2Turn";
-            this.lblPlayer2Turn.Size = new System.Drawing.Size(140, 36);
+            this.lblPlayer2Turn.Size = new System.Drawing.Size(150, 36);
             this.lblPlayer2Turn.TabIndex = 1;
             this.lblPlayer2Turn.Text = "Player 2";
+            this.lblPlayer2Turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlayer1Turn
             // 
             this.lblPlayer1Turn.AutoSize = true;
             this.lblPlayer1Turn.Font = new System.Drawing.Font("Eurostile LT Std Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPlayer1Turn.Location = new System.Drawing.Point(29, 97);
+            this.lblPlayer1Turn.MinimumSize = new System.Drawing.Size(150, 36);
             this.lblPlayer1Turn.Name = "lblPlayer1Turn";
-            this.lblPlayer1Turn.Size = new System.Drawing.Size(140, 36);
+            this.lblPlayer1Turn.Size = new System.Drawing.Size(150, 36);
             this.lblPlayer1Turn.TabIndex = 0;
             this.lblPlayer1Turn.Text = "Player 1";
+            this.lblPlayer1Turn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainWindow
             // 
@@ -349,9 +405,13 @@
         private Label lblPlayer1Turn;
         private Label lblPlayer1;
         private Label lblPlayer2;
-        private Button btnReset;
+        private Button btnStartGame;
         private PictureBox pbxCurrentTurnArrow;
         private PictureBox pbxP2EventSpace;
         private PictureBox pbxP1EventSpace;
+        private Label lblP2Name;
+        private Label lblP1Name;
+        private TextBox tbxP2Name;
+        private TextBox tbxP1Name;
     }
 }

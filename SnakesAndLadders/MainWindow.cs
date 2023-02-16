@@ -4,18 +4,20 @@ namespace SnakesAndLadders
     {
         private int currentPlayer;
         private int rolledNumber;
+        private string player1Name;
+        private string player2Name;
         private Point playerLabelLocation;
         private Player player1;
         private Player player2;
         public MainWindow()
         {
             InitializeComponent();
-            StartGame();
+            btnRollDice.Enabled = false;
         }
         private void StartGame()
         {
-            player1 = new Player(1);
-            player2 = new Player(2);
+            player1 = new Player(1, player1Name);
+            player2 = new Player(2, player2Name);
             Random startingPlayer = new Random();
             currentPlayer = startingPlayer.Next(1, 3);
             if (currentPlayer == player1.id)
@@ -26,6 +28,7 @@ namespace SnakesAndLadders
             {
                 MessageBox.Show("Player 2 shall go first!", "Starting Player", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            btnRollDice.Enabled = true;
             ResetGame();
         }
         private void ResetGame()
@@ -42,6 +45,10 @@ namespace SnakesAndLadders
         }
         private void UpdateLabels()
         {
+            lblPlayer1Turn.Text = player1.name;
+            lblPlayer1Positions.Text = player1.name;
+            lblPlayer2Turn.Text = player2.name;
+            lblPlayer2Positions.Text = player2.name;
             lblPlayer1PositionNumber.Text = player1.position.ToString();
             lblPlayer2PositionNumber.Text = player2.position.ToString();
             if (currentPlayer == player1.id)
@@ -672,9 +679,59 @@ namespace SnakesAndLadders
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnStartGame_Click(object sender, EventArgs e)
         {
-            RestartGame();
+            if (tbxP1Name.Text == "" || tbxP2Name.Text == "")
+            {
+                MessageBox.Show("Enter the names of each player before starting the game!", "Missing Player Names", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                GetPlayerNames();
+            }
+        }
+        private void GetPlayerNames()
+        {
+            if (tbxP1Name.Text != "")
+            {
+                DialogResult result = MessageBox.Show("Are you sure '" + tbxP1Name.Text + "' is Player 1's name?", "Confirm Name", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    player1Name = tbxP1Name.Text;
+                    tbxP1Name.Enabled = false;
+                    tbxP1Name.Cursor = Cursors.No;
+                }
+                else
+                {
+                    tbxP1Name.Clear();
+                    tbxP1Name.Enabled = true;
+                    tbxP1Name.Cursor = Cursors.IBeam;
+                }
+            }
+            if (tbxP2Name.Text != "")
+            {
+                DialogResult result = MessageBox.Show("Are you sure '" + tbxP2Name.Text + "' is Player 2's name?", "Confirm Name", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    player2Name = tbxP2Name.Text;
+                    tbxP2Name.Enabled = false;
+                    tbxP2Name.Cursor = Cursors.No;
+                }
+                else
+                {
+                    tbxP2Name.Clear();
+                    tbxP2Name.Enabled = true;
+                    tbxP2Name.Cursor = Cursors.IBeam;
+                }
+            }
+            if (tbxP1Name.Text != "" && tbxP2Name.Text != "")
+            {
+                lblP1Name.Hide();
+                tbxP1Name.Hide();
+                lblP2Name.Hide();
+                tbxP2Name.Hide();
+                StartGame();
+            }
         }
     }
 }
