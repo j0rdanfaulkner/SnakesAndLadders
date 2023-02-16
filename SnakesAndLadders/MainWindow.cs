@@ -81,62 +81,62 @@ namespace SnakesAndLadders
                 RestartGame();
             }
         }
-        private int CheckCurrentPosition(int playerPosition)
+        private int CheckCurrentPosition(Player p)
         {
-            int currentPosition = playerPosition;
+            int currentPosition = p.position;
             // all the spaces that have snakes
-            if (playerPosition == 17)
+            if (p.position == 17)
             {
-                currentPosition = playerPosition - 10;
+                currentPosition = p.position - 10;
             }
-            else if (playerPosition == 54 || playerPosition == 93 || playerPosition == 95)
+            else if (p.position == 54 || p.position == 93 || p.position == 95)
             {
-                currentPosition = playerPosition - 20;
+                currentPosition = p.position - 20;
             }
-            else if (playerPosition == 62)
+            else if (p.position == 62)
             {
-                currentPosition = playerPosition - 43;
+                currentPosition = p.position - 43;
             }
-            else if (playerPosition == 64)
+            else if (p.position == 64)
             {
-                currentPosition = playerPosition - 4;
+                currentPosition = p.position - 4;
             }
-            else if (playerPosition == 87)
+            else if (p.position == 87)
             {
-                currentPosition = playerPosition - 63;
+                currentPosition = p.position - 63;
             }
-            else if (playerPosition == 98)
+            else if (p.position == 98)
             {
-                currentPosition = playerPosition - 19;
+                currentPosition = p.position - 19;
             }
             // all the spaces that have ladders
-            else if (playerPosition == 1)
+            else if (p.position == 1)
             {
-                currentPosition = playerPosition + 37;
+                currentPosition = p.position + 37;
             }
-            else if (playerPosition == 4)
+            else if (p.position == 4)
             {
-                currentPosition = playerPosition + 10;
+                currentPosition = p.position + 10;
             }
-            else if (playerPosition == 9)
+            else if (p.position == 9)
             {
-                currentPosition = playerPosition + 22;
+                currentPosition = p.position + 22;
             }
-            else if (playerPosition == 21)
+            else if (p.position == 21)
             {
-                currentPosition = playerPosition + 42;
+                currentPosition = p.position + 42;
             }
-            else if (playerPosition == 28)
+            else if (p.position == 28)
             {
-                currentPosition = playerPosition + 56;
+                currentPosition = p.position + 56;
             }
-            else if (playerPosition == 51)
+            else if (p.position == 51)
             {
-                currentPosition = playerPosition + 16;
+                currentPosition = p.position + 16;
             }
-            else if (playerPosition == 71 || playerPosition == 80)
+            else if (p.position == 71 || p.position == 80)
             {
-                currentPosition = playerPosition + 20;
+                currentPosition = p.position + 20;
             }
             return currentPosition;
         }
@@ -649,7 +649,7 @@ namespace SnakesAndLadders
                 player1.position = player1.position + rolledNumber;
                 player1.positionOnBoard = MovePlayer(player1, rolledNumber);
                 lblPlayer1.Location = player1.positionOnBoard;
-                player1.position = CheckCurrentPosition(player1.position);
+                player1.position = CheckCurrentPosition(player1);
             }
             else if (currentPlayer.id == player2.id)
             {
@@ -658,7 +658,7 @@ namespace SnakesAndLadders
                 player2.position = player2.position + rolledNumber;
                 player2.positionOnBoard = MovePlayer(player2, rolledNumber);
                 lblPlayer2.Location = player2.positionOnBoard;
-                player2.position = CheckCurrentPosition(player2.position);
+                player2.position = CheckCurrentPosition(player2);
             }
             EndCurrentTurn(currentPlayer);
         }
