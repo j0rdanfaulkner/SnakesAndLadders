@@ -9,10 +9,10 @@ namespace SnakesAndLadders
 {
     class Player
     {
-        public int id;
-        public string name;
-        public int position;
-        public Point positionOnBoard;
+        public int id;                  // unique player number
+        public string name;             // name entered before game starts
+        public int position;            // the number of the square the player is currently at on the game board
+        public Point positionOnBoard;   // the X & Y co-ordinates of the player label on the board
         public Player(int playerNumber, string playerName)
         {
             id = playerNumber;

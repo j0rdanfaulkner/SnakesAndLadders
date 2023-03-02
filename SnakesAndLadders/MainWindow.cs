@@ -16,6 +16,11 @@ namespace SnakesAndLadders
             lblPlayer1.Hide();
             lblPlayer2.Hide();
         }
+        /// <summary>
+        /// creates 3 player objects using the Player class (player 1 and player 2, as well as 'currentPlayer')
+        /// chooses the starting player at random, then displays a message box to show who the starting player is
+        /// calls the ResetGame method to start the game with a new board
+        /// </summary>
         private void StartGame()
         {
             player1 = new Player(1, player1Name);
@@ -36,9 +41,12 @@ namespace SnakesAndLadders
             btnRollDice.Enabled = true;
             ResetGame();
         }
+        /// <summary>
+        /// resets the properties of players 1 and 2 in terms of their current positions and board locations
+        /// calls the UpdateLabels method to show that the game has been reset
+        /// </summary>
         private void ResetGame()
         {
-            UpdateLabels(currentPlayer);
             player1.position = 0;
             player1.positionOnBoard = new Point(-55, 650);
             lblPlayer1.Location = player1.positionOnBoard;
@@ -47,7 +55,13 @@ namespace SnakesAndLadders
             lblPlayer2.Location = player2.positionOnBoard;
             pbxP1EventSpace.BackgroundImage = null;
             pbxP2EventSpace.BackgroundImage = null;
+            UpdateLabels(currentPlayer);
         }
+        /// <summary>
+        /// updates the text labels of the UI to show the names of each player and their current positions
+        /// also updates a picture box used to show an arrow that points to the player having their turn
+        /// </summary>
+        /// <param name="p"></param>
         private void UpdateLabels(Player p)
         {
             lblPlayer1Turn.Text = player1.name;
@@ -65,6 +79,10 @@ namespace SnakesAndLadders
                 pbxCurrentTurnArrow.BackgroundImage = Properties.Resources.leftarrow;
             }
         }
+        /// <summary>
+        /// displays a message box asking if the game is to be restarted
+        /// (if so, the StartGame method is run)
+        /// </summary>
         private void RestartGame()
         {
             DialogResult result = MessageBox.Show("Do you want to start a new game?", "Rematch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -73,6 +91,11 @@ namespace SnakesAndLadders
                 StartGame();
             }
         }
+        /// <summary>
+        /// checks if player 'p' has reached position 100
+        /// (runs the RestartGame method if there is a winning player)
+        /// </summary>
+        /// <param name="p"></param>
         private void CheckForWinner(Player p)
         {
             if (p.position >= 100)
@@ -81,6 +104,11 @@ namespace SnakesAndLadders
                 RestartGame();
             }
         }
+        /// <summary>
+        /// returns the position of player 'p' after they have moved up a ladder/down a snake
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         private int CheckCurrentPosition(Player p)
         {
             int currentPosition = p.position;
@@ -140,6 +168,12 @@ namespace SnakesAndLadders
             }
             return currentPosition;
         }
+        /// <summary>
+        /// ends the turn of the current player
+        /// updates the text labels of the UI to show that the player's turn has ended
+        /// also checks if the current player has reached position 100 (in other words, if they have won)
+        /// </summary>
+        /// <param name="p"></param>
         private void EndCurrentTurn(Player p)
         {
             if (p.id == player1.id)
@@ -153,6 +187,12 @@ namespace SnakesAndLadders
             UpdateLabels(currentPlayer);
             CheckForWinner(currentPlayer);
         }
+        /// <summary>
+        /// moves the player label across the board once they have rolled the dice
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="diceNumber"></param>
+        /// <returns></returns>
         private Point MovePlayer(Player p, int diceNumber)
         {
             // int size = 0;
@@ -582,7 +622,7 @@ namespace SnakesAndLadders
             return playerLabelLocation;
         }/// <summary>
         /// shows a message box that says if the player has gone up a ladder/down a snake
-        /// shows a ladder or snake icon next to their score to reflect this
+        /// (also shows a ladder or snake icon next to their score to reflect this)
         /// </summary>
         /// <param name="eventType"></param>
         /// <param name="playerNumber"></param>
@@ -633,6 +673,12 @@ namespace SnakesAndLadders
                 }
             }
         }
+        /// <summary>
+        /// generates a random number between 1 and 6 to represent rolling a 6-sided dice
+        /// (returns this number as the 'rolledNumber' integer variable)
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         private int RollDice(Player p)
         {
             Random roll = new Random();
@@ -640,6 +686,15 @@ namespace SnakesAndLadders
             MessageBox.Show(p.name + " rolled a " + rolledNumber + "!", "Dice Rolled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return rolledNumber;
         }
+        /// <summary>
+        /// calls the RollDice method with the player that rolled the dice as a parameter
+        /// calls the MovePlayer method with the player that rolled the dice and the 'rolledNumber' variable as parameters
+        /// sets the position of the player to their position on the board which they just moved to
+        /// calls the CheckCurrentPosition method with the player that rolled the dice as a parameter
+        /// calls the EndCurrentTurn method with currentPlayer as a parameter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRollDice_Click(object sender, EventArgs e)
         {
             if (currentPlayer.id == player1.id)
@@ -692,6 +747,11 @@ namespace SnakesAndLadders
                 GetPlayerNames();
             }
         }
+        /// <summary>
+        /// sets the names of player 1 and player 2 with the values entered in the corresponding textboxes
+        /// (if no names are entered, a message box will appear with a prompt asking for both names to be given before proceeding)
+        /// calls the StartGame method once the names are submitted and assigned to both players
+        /// </summary>
         private void GetPlayerNames()
         {
             if (tbxP1Name.Text != "")
