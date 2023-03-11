@@ -70,11 +70,11 @@ namespace SnakesAndLadders
             lblPlayer2Positions.Text = player2.name;
             lblPlayer1PositionNumber.Text = player1.position.ToString();
             lblPlayer2PositionNumber.Text = player2.position.ToString();
-            if (p.id == player1.id)
+            if (p.id == 1)
             {
                 pbxCurrentTurnArrow.BackgroundImage = Properties.Resources.rightarrow;
             }
-            else if (p.id == player2.id)
+            else if (p.id == 2)
             {
                 pbxCurrentTurnArrow.BackgroundImage = Properties.Resources.leftarrow;
             }
@@ -176,11 +176,11 @@ namespace SnakesAndLadders
         /// <param name="p"></param>
         private void EndCurrentTurn(Player p)
         {
-            if (p.id == player1.id)
+            if (p.id == 1)
             {
                 currentPlayer = player2;
             }
-            else if (p.id == player2.id)
+            else if (p.id == 2)
             {
                 currentPlayer = player1;
             }
@@ -198,12 +198,12 @@ namespace SnakesAndLadders
             // int size = 0;
             int currentX = 0;
             int currentY = 0;
-            if (p.id == player1.id)
+            if (p.id == 1)
             {
                 currentX = lblPlayer1.Location.X;
                 currentY = lblPlayer1.Location.Y;
             }
-            else if (p.id == player2.id)
+            else if (p.id == 2)
             {
                 currentX = lblPlayer2.Location.X;
                 currentY = lblPlayer2.Location.Y;
@@ -311,7 +311,7 @@ namespace SnakesAndLadders
                 case 24:
                     playerLabelLocation = new Point(223, 515);
                     EventSpace("", p);
-                    break; 
+                    break;
                 case 25:
                     playerLabelLocation = new Point(283, 515);
                     EventSpace("", p);
@@ -621,12 +621,12 @@ namespace SnakesAndLadders
             }
             return playerLabelLocation;
         }/// <summary>
-        /// shows a message box that says if the player has gone up a ladder/down a snake
-        /// (also shows a ladder or snake icon next to their score to reflect this)
-        /// </summary>
-        /// <param name="eventType"></param>
-        /// <param name="playerNumber"></param>
-        private void EventSpace(string eventType, Player p )
+         /// shows a message box that says if the player has gone up a ladder/down a snake
+         /// (also shows a ladder or snake icon next to their score to reflect this)
+         /// </summary>
+         /// <param name="eventType"></param>
+         /// <param name="playerNumber"></param>
+        private void EventSpace(string eventType, Player p)
         {
             if (eventType == "ladder")
             {
