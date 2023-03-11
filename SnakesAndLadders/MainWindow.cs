@@ -17,12 +17,110 @@ namespace SnakesAndLadders
             lblPlayer2.Hide();
         }
         /// <summary>
+        /// populates the board with Space objects (100 positions in total)
+        /// </summary>
+        /// <param name="w"></param>
+        /// <param name="h"></param>
+        private void CreateBoard(int w, int h)
+        {
+            Space[,] board = new Space[w, h];
+            int i = 0;
+            int j = 0;
+            int x = 0;
+            int y = 0;
+            int n = 0;
+            for (i = 0; i < w; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        x = 13;
+                        break;
+                    case 1:
+                        x = 83;
+                        break;
+                    case 2:
+                        x = 153;
+                        break;
+                    case 3:
+                        x = 223;
+                        break;
+                    case 4:
+                        x = 293;
+                        break;
+                    case 5:
+                        x = 363;
+                        break;
+                    case 6:
+                        x = 433;
+                        break;
+                    case 7:
+                        x = 503;
+                        break;
+                    case 8:
+                        x = 563;
+                        break;
+                    case 9:
+                        x = 633;
+                        break;
+                    default:
+                        break;
+                }
+                for (j = 0; j < h; j++)
+                {
+                    switch (j)
+                    {
+                        case 0:
+                            y = 35;
+                            break;
+                        case 1:
+                            y = 105;
+                            break;
+                        case 2:
+                            y = 175;
+                            break;
+                        case 3:
+                            y = 245;
+                            break;
+                        case 4:
+                            y = 315;
+                            break;
+                        case 5:
+                            y = 375;
+                            break;
+                        case 6:
+                            y = 445;
+                            break;
+                        case 7:
+                            y = 515;
+                            break;
+                        case 8:
+                            y = 585;
+                            break;
+                        case 9:
+                            y = 650;
+                            break;
+                        default:
+                            break;
+                    }
+                    Space space = new Space(x, y);
+                    space.GetSpaceID(x, y);
+                    space.GetSpaceEventType(x, y);
+                    board[i, j] = space;
+                    string message = String.Format("{0}, ({1}, {2})", space.id.ToString(), space.position.X.ToString(), space.position.Y.ToString());
+                    MessageBox.Show(message, "Test", MessageBoxButtons.OK);
+                }
+            }
+        }
+        /// <summary>
+        /// calls the CreateBoard method with the width and height of the board as parameters
         /// creates 3 player objects using the Player class (player 1 and player 2, as well as 'currentPlayer')
         /// chooses the starting player at random, then displays a message box to show who the starting player is
         /// calls the ResetGame method to start the game with a new board
         /// </summary>
         private void StartGame()
         {
+            CreateBoard(10, 10);
             player1 = new Player(1, player1Name);
             player2 = new Player(2, player2Name);
             currentPlayer = new Player(0, "");
