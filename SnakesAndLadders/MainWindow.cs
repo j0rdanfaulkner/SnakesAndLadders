@@ -271,6 +271,7 @@ namespace SnakesAndLadders
         /// <param name="p"></param>
         private void EndCurrentTurn(Player p)
         {
+            CheckForWinner(currentPlayer);
             if (p.id == 1)
             {
                 currentPlayer = player2;
@@ -280,7 +281,6 @@ namespace SnakesAndLadders
                 currentPlayer = player1;
             }
             UpdateLabels(currentPlayer);
-            CheckForWinner(currentPlayer);
         }
         /// <summary>
         /// moves the player label across the board once they have rolled the dice
