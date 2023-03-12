@@ -247,7 +247,7 @@ namespace SnakesAndLadders
             }
             else if (p.position == 21)
             {
-                currentPosition = p.position + 42;
+                currentPosition = p.position + 21;
             }
             else if (p.position == 28)
             {
@@ -309,6 +309,8 @@ namespace SnakesAndLadders
                     s = board[0, 9];
                     playerLabelLocation = s.position;
                     EventSpace(s.eventType, p);
+                    s = board[2, 6];
+                    playerLabelLocation = s.position;   // space 38 within array
                     break;
                 case 2:
                     s = board[1, 9];
@@ -324,6 +326,8 @@ namespace SnakesAndLadders
                     s = board[3, 9];
                     playerLabelLocation = s.position;
                     EventSpace(s.eventType, p);
+                    s = board[6, 8];    // space 14 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 5:
                     s = board[4, 9];
@@ -336,380 +340,502 @@ namespace SnakesAndLadders
                     EventSpace(s.eventType, p);
                     break;
                 case 7:
-                    playerLabelLocation = new Point(433, 650);
-                    EventSpace("", p);
+                    s = board[6, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 8:
-                    playerLabelLocation = new Point(503, 650);
-                    EventSpace("", p);
+                    s = board[7, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 9: // space with ladder (9 -> 31)
-                    playerLabelLocation = new Point(633, 445);
-                    EventSpace("ladder", p);
+                    s = board[8, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[9, 6];    // space 31 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 10:
-                    playerLabelLocation = new Point(646, 650);
-                    EventSpace("", p);
+                    s = board[9, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 11:
-                    playerLabelLocation = new Point(630, 585);
-                    EventSpace("", p);
+                    s = board[9, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 12:
-                    playerLabelLocation = new Point(563, 585);
-                    EventSpace("", p);
+                    s = board[8, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 13:
-                    playerLabelLocation = new Point(493, 585);
-                    EventSpace("", p);
+                    s = board[7, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 14:
-                    playerLabelLocation = new Point(423, 585);
-                    EventSpace("", p);
+                    s = board[6, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 15:
-                    playerLabelLocation = new Point(353, 585);
-                    EventSpace("", p);
+                    s = board[5, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 16:
-                    playerLabelLocation = new Point(283, 585);
-                    EventSpace("", p);
+                    s = board[4, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 17: // space with snake (17 -> 7)
-                    playerLabelLocation = new Point(433, 650);
-                    EventSpace("snake", p);
+                    s = board[3, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[6, 9];    // space 7 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 18:
-                    playerLabelLocation = new Point(153, 585);
-                    EventSpace("", p);
+                    s = board[2, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 19:
-                    playerLabelLocation = new Point(83, 585);
-                    EventSpace("", p);
+                    s = board[1, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 20:
-                    playerLabelLocation = new Point(13, 585);
-                    EventSpace("", p);
+                    s = board[0, 8];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 21: // space with ladder (21 -> 42)
-                    playerLabelLocation = new Point(83, 375);
-                    EventSpace("ladder", p);
+                    s = board[0, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[1, 5];    // space 42 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 22:
-                    playerLabelLocation = new Point(83, 515);
-                    EventSpace("", p);
+                    s = board[1, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 23:
-                    playerLabelLocation = new Point(153, 515);
-                    EventSpace("", p);
+                    s = board[2, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 24:
-                    playerLabelLocation = new Point(223, 515);
-                    EventSpace("", p);
+                    s = board[3, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 25:
-                    playerLabelLocation = new Point(283, 515);
-                    EventSpace("", p);
+                    s = board[4, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 26:
-                    playerLabelLocation = new Point(353, 515);
-                    EventSpace("", p);
+                    s = board[5, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 27:
-                    playerLabelLocation = new Point(423, 515);
-                    EventSpace("", p);
+                    s = board[6, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 28: // space with ladder (28 -> 84)
-                    playerLabelLocation = new Point(23, 105);
-                    EventSpace("ladder", p);
+                    s = board[7, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[3, 1];    // space 84 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 29:
-                    playerLabelLocation = new Point(563, 515);
-                    EventSpace("", p);
+                    s = board[8, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 30:
-                    playerLabelLocation = new Point(633, 515);
-                    EventSpace("", p);
+                    s = board[9, 7];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 31:
-                    playerLabelLocation = new Point(633, 445);
-                    EventSpace("", p);
+                    s = board[9, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 32:
-                    playerLabelLocation = new Point(563, 445);
-                    EventSpace("", p);
+                    s = board[8, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 33:
-                    playerLabelLocation = new Point(493, 445);
-                    EventSpace("", p);
+                    s = board[7, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 34:
-                    playerLabelLocation = new Point(423, 445);
-                    EventSpace("", p);
+                    s = board[6, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 35:
-                    playerLabelLocation = new Point(353, 445);
-                    EventSpace("", p);
+                    s = board[5, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 36:
-                    playerLabelLocation = new Point(283, 445);
-                    EventSpace("", p);
+                    s = board[4, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 37:
-                    playerLabelLocation = new Point(223, 445);
-                    EventSpace("", p);
+                    s = board[3, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 38:
-                    playerLabelLocation = new Point(153, 445);
-                    EventSpace("", p);
+                    s = board[2, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 39:
-                    playerLabelLocation = new Point(83, 445);
-                    EventSpace("", p);
+                    s = board[1, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 40:
-                    playerLabelLocation = new Point(13, 445);
-                    EventSpace("", p);
+                    s = board[0, 6];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 41:
-                    playerLabelLocation = new Point(13, 375);
-                    EventSpace("", p);
+                    s = board[0, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 42:
-                    playerLabelLocation = new Point(83, 375);
-                    EventSpace("", p);
+                    s = board[1, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 43:
-                    playerLabelLocation = new Point(153, 375);
-                    EventSpace("", p);
+                    s = board[2, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 44:
-                    playerLabelLocation = new Point(223, 375);
-                    EventSpace("", p);
+                    s = board[3, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 45:
-                    playerLabelLocation = new Point(283, 375);
-                    EventSpace("", p);
+                    s = board[4, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 46:
-                    playerLabelLocation = new Point(353, 375);
-                    EventSpace("", p);
+                    s = board[5, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 47:
-                    playerLabelLocation = new Point(423, 375);
-                    EventSpace("", p);
+                    s = board[6, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 48:
-                    playerLabelLocation = new Point(493, 375);
-                    EventSpace("", p);
+                    s = board[7, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 49:
-                    playerLabelLocation = new Point(563, 375);
-                    EventSpace("", p);
+                    s = board[8, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 50:
-                    playerLabelLocation = new Point(633, 375);
-                    EventSpace("", p);
+                    s = board[9, 5];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 51: // space with ladder (51 -> 67)
-                    playerLabelLocation = new Point(425, 240);
-                    EventSpace("ladder", p);
+                    s = board[9, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[6, 3];    // space 67 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 52:
-                    playerLabelLocation = new Point(563, 315);
-                    EventSpace("", p);
+                    s = board[8, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 53:
-                    playerLabelLocation = new Point(493, 315);
-                    EventSpace("", p);
+                    s = board[7, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 54: // space with snake (54 -> 34)
-                    playerLabelLocation = new Point(423, 445);
-                    EventSpace("snake", p);
+                    s = board[6, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[6, 6];    // space 34 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 55:
-                    playerLabelLocation = new Point(353, 315);
-                    EventSpace("", p);
+                    s = board[5, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 56:
-                    playerLabelLocation = new Point(283, 315);
-                    EventSpace("", p);
+                    s = board[4, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 57:
-                    playerLabelLocation = new Point(223, 315);
-                    EventSpace("", p);
+                    s = board[3, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 58:
-                    playerLabelLocation = new Point(153, 315);
-                    EventSpace("", p);
+                    s = board[2, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 59:
-                    playerLabelLocation = new Point(83, 315);
-                    EventSpace("", p);
+                    s = board[1, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 60:
-                    playerLabelLocation = new Point(13, 315);
-                    EventSpace("", p);
+                    s = board[0, 4];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 61:
-                    playerLabelLocation = new Point(13, 245);
-                    EventSpace("", p);
+                    s = board[0, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 62: // space with snake (62 -> 19)
-                    playerLabelLocation = new Point(83, 585);
-                    EventSpace("snake", p);
+                    s = board[1, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[1, 8];    // space 19 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 63:
-                    playerLabelLocation = new Point(153, 245);
-                    EventSpace("", p);
+                    s = board[2, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 64: // space with snake (64 -> 60)
-                    playerLabelLocation = new Point(13, 315);
-                    EventSpace("snake", p);
+                    s = board[3, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[0, 4];    // space 60 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 65:
-                    playerLabelLocation = new Point(283, 245);
-                    EventSpace("", p);
+                    s = board[4, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 66:
-                    playerLabelLocation = new Point(353, 245);
-                    EventSpace("", p);
+                    s = board[5, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 67:
-                    playerLabelLocation = new Point(423, 245);
-                    EventSpace("", p);
+                    s = board[6, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 68:
-                    playerLabelLocation = new Point(493, 245);
-                    EventSpace("", p);
+                    s = board[7, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 69:
-                    playerLabelLocation = new Point(563, 245);
-                    EventSpace("", p);
+                    s = board[8, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 70:
-                    playerLabelLocation = new Point(633, 245);
-                    EventSpace("", p);
+                    s = board[9, 3];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 71: // space with ladder (71 -> 91)
-                    playerLabelLocation = new Point(633, 35);
-                    EventSpace("ladder", p);
+                    s = board[9, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[9, 0];    // space 91 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 72:
-                    playerLabelLocation = new Point(563, 175);
-                    EventSpace("", p);
+                    s = board[8, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 73:
-                    playerLabelLocation = new Point(493, 175);
-                    EventSpace("", p);
+                    s = board[7, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 74:
-                    playerLabelLocation = new Point(423, 175);
-                    EventSpace("", p);
+                    s = board[6, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 75:
-                    playerLabelLocation = new Point(353, 175);
-                    EventSpace("", p);
+                    s = board[5, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 76:
-                    playerLabelLocation = new Point(283, 175);
-                    EventSpace("", p);
+                    s = board[4, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 77:
-                    playerLabelLocation = new Point(223, 175);
-                    EventSpace("", p);
+                    s = board[3, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 78:
-                    playerLabelLocation = new Point(153, 175);
-                    EventSpace("", p);
+                    s = board[2, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 79:
-                    playerLabelLocation = new Point(83, 175);
-                    EventSpace("", p);
+                    s = board[1, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 80: // space with ladder (80 -> 100)
-                    playerLabelLocation = new Point(15, 35);
-                    EventSpace("ladder", p);
+                    s = board[0, 2];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[0, 0];    // space 100 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 81:
-                    playerLabelLocation = new Point(13, 105);
-                    EventSpace("", p);
+                    s = board[0, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 82:
-                    playerLabelLocation = new Point(83, 105);
-                    EventSpace("", p);
+                    s = board[1, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 83:
-                    playerLabelLocation = new Point(153, 105);
-                    EventSpace("", p);
+                    s = board[2, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 84:
-                    playerLabelLocation = new Point(223, 105);
-                    EventSpace("", p);
+                    s = board[3, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 85:
-                    playerLabelLocation = new Point(283, 105);
-                    EventSpace("", p);
+                    s = board[4, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 86:
-                    playerLabelLocation = new Point(353, 105);
-                    EventSpace("", p);
+                    s = board[5, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 87: // space with snake (87 -> 24)
-                    playerLabelLocation = new Point(223, 515);
-                    EventSpace("snake", p);
+                    s = board[6, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[3, 7];    // space 24 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 88:
-                    playerLabelLocation = new Point(493, 105);
-                    EventSpace("", p);
+                    s = board[7, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 89:
-                    playerLabelLocation = new Point(563, 105);
-                    EventSpace("", p);
+                    s = board[8, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 90:
-                    playerLabelLocation = new Point(633, 105);
-                    EventSpace("", p);
+                    s = board[9, 1];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 91:
-                    playerLabelLocation = new Point(633, 35);
-                    EventSpace("", p);
+                    s = board[9, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 92:
-                    playerLabelLocation = new Point(563, 35);
-                    EventSpace("", p);
+                    s = board[8, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 93: // space with snake (93 -> 73)
-                    playerLabelLocation = new Point(493, 175);
-                    EventSpace("snake", p);
+                    s = board[7, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[7, 2];    // space 73 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 94:
-                    playerLabelLocation = new Point(423, 35);
-                    EventSpace("", p);
+                    s = board[6, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 95: // space with snake (95 -> 75)
-                    playerLabelLocation = new Point(353, 175);
-                    EventSpace("snake", p);
+                    s = board[5, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[5, 2];    // space 73 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 96:
-                    playerLabelLocation = new Point(283, 35);
-                    EventSpace("", p);
+                    s = board[4, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 97:
-                    playerLabelLocation = new Point(223, 35);
-                    EventSpace("", p);
+                    s = board[3, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 98: // space with snake (98 -> 79)
-                    playerLabelLocation = new Point(83, 175);
-                    EventSpace("snake", p);
+                    s = board[2, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
+                    s = board[1, 2];    // space 79 within array
+                    playerLabelLocation = s.position;
                     break;
                 case 99:
-                    playerLabelLocation = new Point(83, 35);
-                    EventSpace("", p);
+                    s = board[1, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 100:
-                    playerLabelLocation = new Point(15, 35);
-                    EventSpace("", p);
+                    s = board[0, 0];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 default:
                     break;
