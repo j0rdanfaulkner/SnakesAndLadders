@@ -6,6 +6,7 @@ namespace SnakesAndLadders
         private string player1Name;
         private string player2Name;
         private Point playerLabelLocation;
+        private Space[,] board;
         private Player player1;
         private Player player2;
         private Player currentPlayer;
@@ -17,18 +18,17 @@ namespace SnakesAndLadders
             lblPlayer2.Hide();
         }
         /// <summary>
-        /// populates the board with Space objects (100 positions in total)
+        /// populates the board (2D array of Space objects) with 100 spaces
         /// </summary>
         /// <param name="w"></param>
         /// <param name="h"></param>
         private void CreateBoard(int w, int h)
         {
-            Space[,] board = new Space[w, h];
+            board = new Space[w, h];
             int i = 0;
             int j = 0;
             int x = 0;
             int y = 0;
-            int n = 0;
             for (i = 0; i < w; i++)
             {
                 switch (i)
@@ -104,11 +104,8 @@ namespace SnakesAndLadders
                             break;
                     }
                     Space space = new Space(x, y);
-                    space.GetSpaceID(x, y);
-                    space.GetSpaceEventType(x, y);
+                    space.GetSpaceProperties(x, y);
                     board[i, j] = space;
-                    string message = String.Format("{0}, ({1}, {2})", space.id.ToString(), space.position.X.ToString(), space.position.Y.ToString());
-                    MessageBox.Show(message, "Test", MessageBoxButtons.OK);
                 }
             }
         }
@@ -293,9 +290,9 @@ namespace SnakesAndLadders
         /// <returns></returns>
         private Point MovePlayer(Player p, int diceNumber)
         {
-            // int size = 0;
             int currentX = 0;
             int currentY = 0;
+            Space s = new Space(0, 0);
             if (p.id == 1)
             {
                 currentX = lblPlayer1.Location.X;
@@ -306,37 +303,37 @@ namespace SnakesAndLadders
                 currentX = lblPlayer2.Location.X;
                 currentY = lblPlayer2.Location.Y;
             }
-            // for (int i = 0; i < diceNumber; i++)
-            // {
-            //     size = size + 70;
-            // }
-            // int newX = currentX + size;
-            // playerLabelLocation.X = newX;
             switch (p.position)
             {
                 case 1: // space with ladder (1 -> 38)
-                    playerLabelLocation = new Point(153, 445);
-                    EventSpace("ladder", p);
+                    s = board[0, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 2:
-                    playerLabelLocation = new Point(83, 650);
-                    EventSpace("", p);
+                    s = board[1, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 3:
-                    playerLabelLocation = new Point(153, 650);
-                    EventSpace("", p);
+                    s = board[2, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 4: // space with ladder (4 -> 14)
-                    playerLabelLocation = new Point(423, 585);
-                    EventSpace("ladder", p);
+                    s = board[3, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 5:
-                    playerLabelLocation = new Point(293, 650);
-                    EventSpace("", p);
+                    s = board[4, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 6:
-                    playerLabelLocation = new Point(363, 650);
-                    EventSpace("", p);
+                    s = board[5, 9];
+                    playerLabelLocation = s.position;
+                    EventSpace(s.eventType, p);
                     break;
                 case 7:
                     playerLabelLocation = new Point(433, 650);
